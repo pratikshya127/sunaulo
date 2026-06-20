@@ -1,0 +1,1107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef9ee;
+}
+
+/* Navbar */
+
+.navbar {
+    background: #2e7d32;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    margin-left: 18px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #d4f5d4;
+}
+
+.nav-links a:last-child {
+    background: red;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Main Container */
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* Welcome Card */
+
+.welcome-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.welcome-card h1 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    color: #555;
+}
+
+/* Cards */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.welcome-card p {
+    margin-top: 5px;
+    color: #444;
+}
+
+.btn {
+    background: #43a047;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2e7d32;
+}
+
+/* Form */
+
+.form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    color: #2e7d32;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Footer */
+
+.footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+
+/* ================================
+   MEDICINE PAGE
+   ================================ */
+
+.page-title {
+    color: #2e7d32;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-subtitle {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+/* ================================
+   EMPTY STATE
+   ================================ */
+
+.empty-state {
+    background: white;
+    border-radius: 18px;
+    padding: 60px 30px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 14px;
+}
+
+.empty-state h3 {
+    color: #2e7d32;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ================================
+   CARD GRID
+   ================================ */
+
+.medicine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ================================
+   MEDICINE CARD
+   ================================ */
+
+.med-card {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    border-left: 5px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.med-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+}
+
+/* Left border color by status */
+.status-border-taken     { border-left-color: #43a047; }
+.status-border-pending   { border-left-color: #8e24aa; }
+.status-border-missed    { border-left-color: #e53935; }
+.status-border-not-taken { border-left-color: #fb8c00; }
+.status-border-finished  { border-left-color: #1e88e5; }
+
+/* ================================
+   CARD TOP: name + badge
+   ================================ */
+
+.med-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.med-name {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1b5e20;
+    text-transform: capitalize;
+    line-height: 1.2;
+}
+
+/* ================================
+   STATUS BADGES
+   ================================ */
+
+.status-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 11px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.badge-taken     { background: #e8f5e9; color: #1b5e20; }
+.badge-pending   { background: #f3e5f5; color: #4a148c; }
+.badge-missed    { background: #ffebee; color: #b71c1c; }
+.badge-not-taken { background: #fff3e0; color: #bf360c; }
+.badge-finished  { background: #e3f2fd; color: #0d47a1; }
+
+/* ================================
+   INFO GRID inside card
+   ================================ */
+
+.med-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 10px;
+    background: #f4fbf4;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.med-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.info-icon {
+    font-size: 17px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.info-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #aaa;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.info-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* ================================
+   ACTION BUTTONS
+   ================================ */
+
+.med-btn-row {
+    display: flex;
+    gap: 7px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 13px;
+}
+
+.med-btn {
+    flex: 1;
+    padding: 8px 6px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1.5px solid transparent;
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+.med-btn:hover {
+    opacity: 0.82;
+    transform: scale(1.04);
+}
+
+.btn-taken  { background: #e8f5e9; color: #1b5e20; border-color: #a5d6a7; }
+.btn-not    { background: #ffebee; color: #b71c1c; border-color: #ef9a9a; }
+.btn-finish { background: #e3f2fd; color: #0d47a1; border-color: #90caf9; }
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 640px) {
+    .medicine-grid {
+        grid-template-columns: 1fr;
+    }
+    .med-btn-row {
+        flex-direction: column;
+    }
+    .med-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ================================
+   MOOD TRACKER
+   ================================ */
+
+.mood-container {
+    width: 90%;
+    margin: auto;
+    padding: 36px 0;
+}
+
+.mood-page-title {
+    color: #2e7d32;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.mood-page-sub {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+/* ================================
+   FORM CARD
+   ================================ */
+
+.mood-form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px 30px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+    margin-bottom: 32px;
+}
+
+/* ================================
+   MOOD BUTTONS ROW
+   ================================ */
+
+.mood-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.mood-btn {
+    flex: 1;
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 10px;
+    border-radius: 16px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.mood-emoji {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.mood-btn:hover {
+    border-color: #43a047;
+    background: #f4fbf4;
+    color: #2e7d32;
+    transform: translateY(-2px);
+}
+
+.mood-btn.selected {
+    border-color: #43a047;
+    background: #e8f5e9;
+    color: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(67, 160, 71, 0.18);
+}
+
+/* ================================
+   NOTE TEXTAREA
+   ================================ */
+
+.mood-note {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 12px;
+    font-size: 14px;
+    resize: none;
+    margin-bottom: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.mood-note:focus {
+    outline: none;
+    border-color: #43a047;
+}
+
+/* ================================
+   SAVE BUTTON
+   ================================ */
+
+.mood-save-btn {
+    background: #43a047;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.mood-save-btn:hover {
+    background: #2e7d32;
+}
+
+/* ================================
+   HISTORY SECTION
+   ================================ */
+
+.mood-section-title {
+    color: #2e7d32;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.history-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ================================
+   HISTORY CARD
+   ================================ */
+
+.history-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border-left: 5px solid #ccc;
+}
+
+.h-emoji {
+    font-size: 32px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.h-body {
+    flex: 1;
+}
+
+.h-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.h-mood {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.h-time {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.h-note {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ================================
+   EMPTY STATE
+   ================================ */
+
+.mood-empty {
+    background: white;
+    border-radius: 18px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.mood-empty p {
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 600px) {
+    .mood-btn {
+        min-width: 70px;
+        padding: 12px 6px;
+        font-size: 12px;
+    }
+    .mood-emoji {
+        font-size: 24px;
+    }
+    .h-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+}
+
+/* ===========================
+   HEALTH PAGE
+   =========================== */
+
+.health-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Header */
+
+.health-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.health-header h1 {
+    font-size: 42px;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.health-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Grid */
+
+.health-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Cards */
+
+.health-card {
+    background: #fff;
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.health-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon Circle */
+
+.card-icon {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    background: #e8f5e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+/* Content */
+
+.card-content {
+    flex: 1;
+}
+
+.card-content label {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1b5e20;
+    margin-bottom: 12px;
+}
+
+.card-content input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 15px;
+    border: 2px solid #ddd;
+    font-size: 18px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.card-content input:focus {
+    border-color: #2e7d32;
+}
+
+/* Status */
+
+.status {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.normal {
+    background: #dcedc8;
+    color: #2e7d32;
+}
+
+.good {
+    background: #d4edda;
+    color: #155724;
+}
+
+.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Button */
+
+.save-btn-area {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.save-btn-area button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-btn-area button:hover {
+    background: #1b5e20;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .health-grid {
+        grid-template-columns: 1fr;
+    }
+    .health-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .health-header h1 {
+        font-size: 32px;
+    }
+    .card-content label {
+        font-size: 20px;
+    }
+}
+.page-subtitle {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+/* ================================
+   CONTACT GRID
+   ================================ */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+}
+
+/* ================================
+   CONTACT CARD
+   ================================ */
+
+.contact-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================
+   AVATAR
+   ================================ */
+
+.contact-avatar {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    border-radius: 50%;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================================
+   CONTACT INFO
+   ================================ */
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 4px;
+}
+
+.contact-phone {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.contact-address {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.contact-type-badge {
+    display: inline-block;
+    background: #f4fbf4;
+    color: #2e7d32;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #c8e6c9;
+}
+
+/* ================================
+   CONTACT ACTIONS
+   ================================ */
+
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-btn {
+    padding: 7px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-call {
+    background: #e8f5e9;
+    color: #1b5e20;
+    border: 1.5px solid #a5d6a7;
+}
+
+.btn-delete {
+    background: #ffebee;
+    color: #b71c1c;
+    border: 1.5px solid #ef9a9a;
+}
+
+/* ================================
+   EMPTY STATE
+   ================================ */
+
+.empty-state {
+    background: white;
+    border-radius: 18px;
+    padding: 60px 30px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 14px;
+}
+
+.empty-state h3 {
+    color: #2e7d32;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 600px) {
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-actions {
+        flex-direction: row;
+        width: 100%;
+    }
+    .contact-btn {
+        flex: 1;
+    }
+}
+
+
+
+.page-subtitle {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+/* ================================
+   MEMORY GALLERY GRID
+   ================================ */
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* ================================
+   MEMORY CARD
+   ================================ */
+
+.memory-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.memory-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+}
+
+/* ================================
+   MEMORY IMAGE
+   ================================ */
+
+.memory-img-wrap {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.memory-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.memory-img:hover {
+    transform: scale(1.05);
+}
+
+/* ================================
+   MEMORY FOOTER
+   ================================ */
+
+.memory-footer {
+    padding: 14px 16px;
+}
+
+.memory-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 4px;
+}
+
+.memory-desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.memory-date {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.memory-delete {
+    font-size: 12px;
+    color: #b71c1c;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.memory-delete:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   EMPTY STATE
+   ================================ */
+
+.empty-state {
+    background: white;
+    border-radius: 18px;
+    padding: 60px 30px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 14px;
+}
+
+.empty-state h3 {
+    color: #2e7d32;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ================================
+   LIGHTBOX
+   ================================ */
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+}
+
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 600px) {
+    .memory-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .memory-img-wrap {
+        height: 140px;
+    }
+}

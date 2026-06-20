@@ -1,0 +1,44 @@
+
+
+services:
+  web:
+    build: .
+    container_name: sunaulo_web
+    ports:
+      - "80:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./:/var/www/html/
+    restart: always
+
+  db:
+    image: mysql:8.0
+    container_name: sunaulo_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: sunaulo_database
+    volumes:
+      - ./database/sunaulo_database.sql:/docker-entrypoint-initdb.d/sunaulo_database.sql
+    ports:
+      - "3306:3306"
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: sunaulo_phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
