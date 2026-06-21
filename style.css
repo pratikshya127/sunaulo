@@ -5,11 +5,21 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background: #eef9ee;
+/* ── Sticky footer: body fills full viewport height ── */
+html {
+    height: 100%;
 }
 
-/* Navbar */
+body {
+    background: #eef9ee;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ================================
+   NAVBAR
+   ================================ */
 
 .navbar {
     background: #2e7d32;
@@ -43,137 +53,20 @@ body {
     border-radius: 6px;
 }
 
-/* Main Container */
+/* ================================
+   MAIN CONTAINER
+   ── flex: 1 pushes footer to bottom ──
+   ================================ */
 
 .container {
     width: 90%;
     margin: auto;
     padding: 40px 0;
-}
-
-/* Welcome Card */
-
-.welcome-card {
-    background: white;
-    border-radius: 20px;
-    padding: 35px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-.welcome-card h1 {
-    color: #2e7d32;
-    margin-bottom: 10px;
-}
-
-.welcome-card p {
-    color: #555;
-}
-
-/* Cards */
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h2 {
-    color: #2e7d32;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.card h2 {
-    font-size: 20px;
-}
-
-.card p {
-    font-size: 14px;
-}
-
-.welcome-card p {
-    margin-top: 5px;
-    color: #444;
-}
-
-.btn {
-    background: #43a047;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: #2e7d32;
-}
-
-/* Form */
-
-.form-card {
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.page-title {
-    color: #2e7d32;
-    margin-bottom: 25px;
-}
-
-label {
-    font-weight: bold;
-}
-
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-top: 8px;
-    margin-bottom: 18px;
-}
-
-textarea {
-    resize: none;
-}
-
-/* Footer */
-
-.footer {
-    background: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 18px;
-    margin-top: 50px;
+    flex: 1;
 }
 
 /* ================================
-   MEDICINE PAGE
+   SHARED: PAGE TITLE & SUBTITLE
    ================================ */
 
 .page-title {
@@ -190,7 +83,7 @@ textarea {
 }
 
 /* ================================
-   EMPTY STATE
+   SHARED: EMPTY STATE
    ================================ */
 
 .empty-state {
@@ -218,7 +111,126 @@ textarea {
 }
 
 /* ================================
-   CARD GRID
+   WELCOME CARD (Dashboard)
+   ================================ */
+
+.welcome-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.welcome-card h1 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    margin-top: 5px;
+    color: #444;
+}
+
+/* ================================
+   DASHBOARD CARDS
+   ================================ */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #2e7d32;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* ================================
+   SHARED BUTTON
+   ================================ */
+
+.btn {
+    background: #43a047;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2e7d32;
+}
+
+/* ================================
+   SHARED FORM CARD
+   ================================ */
+
+.form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+
+textarea {
+    resize: none;
+}
+
+/* ================================
+   FOOTER
+   ── margin-top: auto keeps it at bottom ──
+   ================================ */
+
+.footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: auto;
+}
+
+/* ================================
+   MEDICINE PAGE
    ================================ */
 
 .medicine-grid {
@@ -226,10 +238,6 @@ textarea {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
-
-/* ================================
-   MEDICINE CARD
-   ================================ */
 
 .med-card {
     background: white;
@@ -255,10 +263,6 @@ textarea {
 .status-border-not-taken { border-left-color: #fb8c00; }
 .status-border-finished  { border-left-color: #1e88e5; }
 
-/* ================================
-   CARD TOP: name + badge
-   ================================ */
-
 .med-card-top {
     display: flex;
     justify-content: space-between;
@@ -274,10 +278,7 @@ textarea {
     line-height: 1.2;
 }
 
-/* ================================
-   STATUS BADGES
-   ================================ */
-
+/* Status badges */
 .status-badge {
     font-size: 11px;
     font-weight: 600;
@@ -293,10 +294,7 @@ textarea {
 .badge-not-taken { background: #fff3e0; color: #bf360c; }
 .badge-finished  { background: #e3f2fd; color: #0d47a1; }
 
-/* ================================
-   INFO GRID inside card
-   ================================ */
-
+/* Info grid inside card */
 .med-info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -334,10 +332,7 @@ textarea {
     line-height: 1.3;
 }
 
-/* ================================
-   ACTION BUTTONS
-   ================================ */
-
+/* Action buttons */
 .med-btn-row {
     display: flex;
     gap: 7px;
@@ -366,31 +361,22 @@ textarea {
 .btn-not    { background: #ffebee; color: #b71c1c; border-color: #ef9a9a; }
 .btn-finish { background: #e3f2fd; color: #0d47a1; border-color: #90caf9; }
 
-/* ================================
-   RESPONSIVE
-   ================================ */
-
 @media (max-width: 640px) {
-    .medicine-grid {
-        grid-template-columns: 1fr;
-    }
-    .med-btn-row {
-        flex-direction: column;
-    }
-    .med-btn {
-        width: 100%;
-        text-align: center;
-    }
+    .medicine-grid { grid-template-columns: 1fr; }
+    .med-btn-row   { flex-direction: column; }
+    .med-btn       { width: 100%; text-align: center; }
 }
 
 /* ================================
-   MOOD TRACKER
+   MOOD TRACKER PAGE
+   ── mood-container also gets flex:1 ──
    ================================ */
 
 .mood-container {
     width: 90%;
     margin: auto;
     padding: 36px 0;
+    flex: 1;
 }
 
 .mood-page-title {
@@ -406,10 +392,6 @@ textarea {
     margin-bottom: 28px;
 }
 
-/* ================================
-   FORM CARD
-   ================================ */
-
 .mood-form-card {
     background: white;
     border-radius: 20px;
@@ -417,10 +399,6 @@ textarea {
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
     margin-bottom: 32px;
 }
-
-/* ================================
-   MOOD BUTTONS ROW
-   ================================ */
 
 .mood-row {
     display: flex;
@@ -467,10 +445,6 @@ textarea {
     box-shadow: 0 4px 12px rgba(67, 160, 71, 0.18);
 }
 
-/* ================================
-   NOTE TEXTAREA
-   ================================ */
-
 .mood-note {
     width: 100%;
     padding: 13px 15px;
@@ -489,10 +463,6 @@ textarea {
     border-color: #43a047;
 }
 
-/* ================================
-   SAVE BUTTON
-   ================================ */
-
 .mood-save-btn {
     background: #43a047;
     color: white;
@@ -509,10 +479,6 @@ textarea {
     background: #2e7d32;
 }
 
-/* ================================
-   HISTORY SECTION
-   ================================ */
-
 .mood-section-title {
     color: #2e7d32;
     font-size: 20px;
@@ -526,10 +492,6 @@ textarea {
     gap: 14px;
 }
 
-/* ================================
-   HISTORY CARD
-   ================================ */
-
 .history-card {
     background: white;
     border-radius: 16px;
@@ -539,6 +501,7 @@ textarea {
     align-items: flex-start;
     gap: 16px;
     border-left: 5px solid #ccc;
+    position: relative;
 }
 
 .h-emoji {
@@ -547,9 +510,7 @@ textarea {
     margin-top: 2px;
 }
 
-.h-body {
-    flex: 1;
-}
+.h-body { flex: 1; }
 
 .h-top {
     display: flex;
@@ -574,9 +535,18 @@ textarea {
     line-height: 1.5;
 }
 
-/* ================================
-   EMPTY STATE
-   ================================ */
+.h-delete {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.h-delete:hover { color: #e53935; }
 
 .mood-empty {
     background: white;
@@ -592,38 +562,24 @@ textarea {
     margin-top: 10px;
 }
 
-/* ================================
-   RESPONSIVE
-   ================================ */
-
 @media (max-width: 600px) {
-    .mood-btn {
-        min-width: 70px;
-        padding: 12px 6px;
-        font-size: 12px;
-    }
-    .mood-emoji {
-        font-size: 24px;
-    }
-    .h-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2px;
-    }
+    .mood-btn   { min-width: 70px; padding: 12px 6px; font-size: 12px; }
+    .mood-emoji { font-size: 24px; }
+    .h-top      { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
 
-/* ===========================
+/* ================================
    HEALTH PAGE
-   =========================== */
+   ── health-container also gets flex:1 ──
+   ================================ */
 
 .health-container {
     width: 90%;
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
+    flex: 1;
 }
-
-/* Header */
 
 .health-header {
     text-align: center;
@@ -641,15 +597,11 @@ textarea {
     color: #666;
 }
 
-/* Grid */
-
 .health-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
-
-/* Cards */
 
 .health-card {
     background: #fff;
@@ -662,11 +614,7 @@ textarea {
     transition: 0.3s ease;
 }
 
-.health-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Icon Circle */
+.health-card:hover { transform: translateY(-5px); }
 
 .card-icon {
     width: 90px;
@@ -680,11 +628,7 @@ textarea {
     font-size: 40px;
 }
 
-/* Content */
-
-.card-content {
-    flex: 1;
-}
+.card-content { flex: 1; }
 
 .card-content label {
     display: block;
@@ -704,11 +648,7 @@ textarea {
     transition: 0.3s;
 }
 
-.card-content input:focus {
-    border-color: #2e7d32;
-}
-
-/* Status */
+.card-content input:focus { border-color: #2e7d32; }
 
 .status {
     display: inline-block;
@@ -719,22 +659,9 @@ textarea {
     font-weight: bold;
 }
 
-.normal {
-    background: #dcedc8;
-    color: #2e7d32;
-}
-
-.good {
-    background: #d4edda;
-    color: #155724;
-}
-
-.warning {
-    background: #fff3cd;
-    color: #856404;
-}
-
-/* Button */
+.normal  { background: #dcedc8; color: #2e7d32; }
+.good    { background: #d4edda; color: #155724; }
+.warning { background: #fff3cd; color: #856404; }
 
 .save-btn-area {
     text-align: center;
@@ -757,31 +684,15 @@ textarea {
     transform: scale(1.05);
 }
 
-/* Responsive */
-
 @media screen and (max-width: 768px) {
-    .health-grid {
-        grid-template-columns: 1fr;
-    }
-    .health-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    .health-header h1 {
-        font-size: 32px;
-    }
-    .card-content label {
-        font-size: 20px;
-    }
-}
-.page-subtitle {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 28px;
+    .health-grid          { grid-template-columns: 1fr; }
+    .health-card          { flex-direction: column; text-align: center; }
+    .health-header h1     { font-size: 32px; }
+    .card-content label   { font-size: 20px; }
 }
 
 /* ================================
-   CONTACT GRID
+   CONTACTS PAGE
    ================================ */
 
 .contact-grid {
@@ -789,10 +700,6 @@ textarea {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 18px;
 }
-
-/* ================================
-   CONTACT CARD
-   ================================ */
 
 .contact-card {
     background: white;
@@ -810,10 +717,6 @@ textarea {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* ================================
-   AVATAR
-   ================================ */
-
 .contact-avatar {
     width: 54px;
     height: 54px;
@@ -828,13 +731,7 @@ textarea {
     justify-content: center;
 }
 
-/* ================================
-   CONTACT INFO
-   ================================ */
-
-.contact-info {
-    flex: 1;
-}
+.contact-info { flex: 1; }
 
 .contact-name {
     font-size: 16px;
@@ -866,10 +763,6 @@ textarea {
     border: 1px solid #c8e6c9;
 }
 
-/* ================================
-   CONTACT ACTIONS
-   ================================ */
-
 .contact-actions {
     display: flex;
     flex-direction: column;
@@ -887,74 +780,17 @@ textarea {
     white-space: nowrap;
 }
 
-.btn-call {
-    background: #e8f5e9;
-    color: #1b5e20;
-    border: 1.5px solid #a5d6a7;
-}
-
-.btn-delete {
-    background: #ffebee;
-    color: #b71c1c;
-    border: 1.5px solid #ef9a9a;
-}
-
-/* ================================
-   EMPTY STATE
-   ================================ */
-
-.empty-state {
-    background: white;
-    border-radius: 18px;
-    padding: 60px 30px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
-}
-
-.empty-icon {
-    font-size: 48px;
-    margin-bottom: 14px;
-}
-
-.empty-state h3 {
-    color: #2e7d32;
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.empty-state p {
-    color: #aaa;
-    font-size: 14px;
-}
-
-/* ================================
-   RESPONSIVE
-   ================================ */
+.btn-call   { background: #e8f5e9; color: #1b5e20; border: 1.5px solid #a5d6a7; }
+.btn-delete { background: #ffebee; color: #b71c1c; border: 1.5px solid #ef9a9a; }
 
 @media (max-width: 600px) {
-    .contact-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    .contact-actions {
-        flex-direction: row;
-        width: 100%;
-    }
-    .contact-btn {
-        flex: 1;
-    }
-}
-
-
-
-.page-subtitle {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 28px;
+    .contact-card    { flex-direction: column; text-align: center; }
+    .contact-actions { flex-direction: row; width: 100%; }
+    .contact-btn     { flex: 1; }
 }
 
 /* ================================
-   MEMORY GALLERY GRID
+   MEMORIES PAGE
    ================================ */
 
 .memory-grid {
@@ -962,10 +798,6 @@ textarea {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
 }
-
-/* ================================
-   MEMORY CARD
-   ================================ */
 
 .memory-card {
     background: white;
@@ -979,10 +811,6 @@ textarea {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
 }
-
-/* ================================
-   MEMORY IMAGE
-   ================================ */
 
 .memory-img-wrap {
     width: 100%;
@@ -999,13 +827,7 @@ textarea {
     transition: transform 0.3s;
 }
 
-.memory-img:hover {
-    transform: scale(1.05);
-}
-
-/* ================================
-   MEMORY FOOTER
-   ================================ */
+.memory-img:hover { transform: scale(1.05); }
 
 .memory-footer {
     padding: 14px 16px;
@@ -1038,42 +860,9 @@ textarea {
     font-weight: 600;
 }
 
-.memory-delete:hover {
-    text-decoration: underline;
-}
+.memory-delete:hover { text-decoration: underline; }
 
-/* ================================
-   EMPTY STATE
-   ================================ */
-
-.empty-state {
-    background: white;
-    border-radius: 18px;
-    padding: 60px 30px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
-}
-
-.empty-icon {
-    font-size: 48px;
-    margin-bottom: 14px;
-}
-
-.empty-state h3 {
-    color: #2e7d32;
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.empty-state p {
-    color: #aaa;
-    font-size: 14px;
-}
-
-/* ================================
-   LIGHTBOX
-   ================================ */
-
+/* Lightbox */
 #lightbox {
     position: fixed;
     inset: 0;
@@ -1092,16 +881,8 @@ textarea {
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* ================================
-   RESPONSIVE
-   ================================ */
-
 @media (max-width: 600px) {
-    .memory-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-    .memory-img-wrap {
-        height: 140px;
-    }
+    .memory-grid     { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .memory-img-wrap { height: 140px; }
 }
+

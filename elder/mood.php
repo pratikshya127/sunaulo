@@ -9,6 +9,12 @@ $user_id = $_SESSION['user_id'];
 $profileRow = mysqli_fetch_assoc(mysqli_query($conn,
     "SELECT id FROM elderly_profile WHERE user_id = '$user_id' LIMIT 1"
 ));
+
+if (!$profileRow) {
+    header("Location: profile.php?msg=complete_profile");
+    exit();
+}
+
 $elder_id = $profileRow['id'];
 
 if (isset($_POST['save'])) {
